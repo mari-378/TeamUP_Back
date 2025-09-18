@@ -1,0 +1,25 @@
+{
+  "name": "teamup-back-estrut",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "services/*"
+  ],
+  "scripts": {
+    "start:mobile": "npm start --workspace=apps/mobile",
+    "start:gateway": "npm start --workspace=services/api-gateway",
+    "start:auth": "npm start --workspace=services/auth-service",
+    "start:users": "npm start --workspace=services/user-service",
+    "start:backend": "concurrently \"npm:start:gateway\" \"npm:start:auth\" \"npm:start:users\"",
+    "dev": "concurrently \"npm:start:*\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
