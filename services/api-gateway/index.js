@@ -17,6 +17,21 @@ app.use('/users', createProxyMiddleware({
   changeOrigin: true,
 }));
 
+app.use('/sorteio', createProxyMiddleware({
+  target: 'http://localhost:4000',
+  changeOrigin: true,
+}));
+
+app.use('/salvar-times', createProxyMiddleware({
+  target: 'http://localhost:4000',
+  changeOrigin: true,
+}));
+
+app.use('/salvar-placar', createProxyMiddleware({
+  target: 'http://localhost:4000',
+  changeOrigin: true,
+}));
+
 app.get('/', (req, res) => res.send('API Gateway está funcionando!'));
 
 app.listen(PORT, () => console.log(`🚪 [API Gateway] Rodando em http://localhost:${PORT}`));
