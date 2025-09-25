@@ -1,0 +1,28 @@
+CREATE TABLE IF NOT EXISTS partidas (
+  id SERIAL PRIMARY KEY,
+  usuario_id INTEGER,
+  esporte VARCHAR(50),
+  criado_em TIMESTAMP DEFAULT now()
+);
+
+CREATE TABLE IF NOT EXISTS times (
+  id SERIAL PRIMARY KEY,
+  partida_id INTEGER REFERENCES partidas(id) ON DELETE CASCADE,
+  nome VARCHAR(100)
+);
+
+CREATE TABLE IF NOT EXISTS time_jogadores (
+  id SERIAL PRIMARY KEY,
+  time_id INTEGER REFERENCES times(id) ON DELETE CASCADE,
+  nome VARCHAR(150),
+  nivel SMALLINT
+);
+
+CREATE TABLE IF NOT EXISTS placares (
+  id SERIAL PRIMARY KEY,
+  partida_id INTEGER REFERENCES partidas(id) ON DELETE CASCADE,
+  usuario_id INTEGER,
+  time_a INTEGER,
+  time_b INTEGER,
+  salvo_em TIMESTAMP DEFAULT now()
+);
