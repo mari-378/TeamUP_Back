@@ -1,12 +1,12 @@
 import { auth, db } from "../services/firebase.js";
 import fetch from "node-fetch";
 
-export const register = async (req, res) => {
+export const cadastro = async (req, res) => {
   try {
-    const { email, senha } = req.body;
-    if (!email || !senha) return res.status(400).json({ erro: "Email e senha são obrigatórios" });
+    const { email, senha, nome, genero, dataNascimento } = req.body;
+    if (!email || !senha || !nome || !genero || !dataNascimento) return res.status(400).json({ erro: "Email, senha, nome, gênero e data de nascimento são obrigatórios" });
 
-    const user = await auth.createUser({ email, password: senha });
+    const user = await auth.createUser({ email, password: senha, nome, genero, dataNascimento });
     await db.collection("users").doc(user.uid).set({ email, createdAt: Date.now() });
     return res.json({ mensagem: "Usuário criado com sucesso!" });
   } catch (error) {
