@@ -1,0 +1,30 @@
+# Dependências
+node_modules/
+
+# Variáveis de ambiente e segredos
+.env
+.env.*.local
+
+# Chaves/credenciais locais
+firebaseKey.json
+*.serviceAccount.json
+*.key.json
+
+# Logs e caches
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+logs/
+*.log
+
+# Build/coverage
+dist/
+build/
+coverage/
+
+# Artefatos de editor/SO
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

@@ -1,0 +1,31 @@
+{
+  "name": "teamup_back",
+  "version": "1.0.0",
+  "description": "API TeamUP (Node.js + Express + Firebase Admin)",
+  "main": "server.js",
+  "type":"module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node -r dotenv/config server.js",
+    "test": "echo \"No tests configured\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mari-378/TeamUP_Back.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mari-378/TeamUP_Back/issues"
+  },
+  "homepage": "https://github.com/mari-378/TeamUP_Back#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "firebase-admin": "^13.6.0",
+    "node": "^25.2.0",
+    "node-fetch": "^3.3.2"
+  }
+}
