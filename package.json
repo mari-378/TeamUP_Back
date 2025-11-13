@@ -1,6 +1,32 @@
 {
   "name": "teamup_back",
   "version": "1.0.0",
+<<<<<<< HEAD
+  "description": "API TeamUP (Node.js + Express + Firebase Admin)",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node -r dotenv/config server.js",
+"test": "node -r dotenv/config --experimental-vm-modules --localstorage-file=temp_test_storage node_modules/jest/bin/jest.js"  },
+  "jest": {
+    "testEnvironment": "node",
+    "transform": {}
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "firebase-admin": "^13.6.0",
+    "node": "^25.2.0",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
+  }
+}
+=======
   "type": "module",
   "main": "server.js",
   "scripts": {
@@ -30,3 +56,4 @@
     }
   }
 }
+>>>>>>> 6987aadca371c436f1f857e7625b556cf1a8f519
